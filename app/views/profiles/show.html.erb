@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Avatar:</strong>
+<%= image_tag(@profile.avatar.url(:thumb)) %>
+</p>
 <p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
