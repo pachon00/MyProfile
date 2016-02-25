@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221115123) do
+ActiveRecord::Schema.define(version: 20160225162439) do
+
+  create_table "academics", force: :cascade do |t|
+    t.string   "name"
+    t.string   "location"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "grade"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "resourse_id"
+    t.integer  "profile_id"
+  end
+
+  add_index "academics", ["profile_id"], name: "index_academics_on_profile_id"
+  add_index "academics", ["resourse_id"], name: "index_academics_on_resourse_id"
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "porcent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -30,5 +52,44 @@ ActiveRecord::Schema.define(version: 20160221115123) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  create_table "resourses", force: :cascade do |t|
+    t.string   "resoursestype"
+    t.string   "name"
+    t.string   "email"
+    t.string   "website"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "porcent"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "level"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "resourse_id"
+    t.integer  "profile_id"
+  end
+
+  add_index "trainings", ["profile_id"], name: "index_trainings_on_profile_id"
+  add_index "trainings", ["resourse_id"], name: "index_trainings_on_resourse_id"
+
+  create_table "works", force: :cascade do |t|
+    t.string   "company"
+    t.string   "roles"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "tasks"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "resourse_id"
+    t.integer  "profile_id"
+  end
+
+  add_index "works", ["profile_id"], name: "index_works_on_profile_id"
+  add_index "works", ["resourse_id"], name: "index_works_on_resourse_id"
 
 end

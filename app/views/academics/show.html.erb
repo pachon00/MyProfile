@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @academic.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @academic.location %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @academic.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @academic.end_date %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @academic.grade %>
+</p>
+
+<%= link_to 'Edit', edit_academic_path(@academic) %> |
+<%= link_to 'Back', academics_path %>
