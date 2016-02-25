@@ -10,10 +10,15 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+        <%= f.label :logo, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.file_field :logo %>
+        </div>
+  </div>
+  <div class="field">
+    <%= f.label :resoursestype %><br>
+    <%= f.text_field :resoursestype %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
