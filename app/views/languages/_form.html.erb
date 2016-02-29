@@ -10,16 +10,24 @@
       </ul>
     </div>
   <% end %>
+<div class='sub-container'>
+  <div class='well bs-component'>
+    <div class="form-group">
+      <%= f.label :name, class: 'col-lg-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :name %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :porcent, class: 'col-lg-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.number_field :porcent %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :porcent %><br>
-    <%= f.number_field :porcent %>
-  </div>
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit %>
   </div>
+  </div>
 <% end %>
+</div>

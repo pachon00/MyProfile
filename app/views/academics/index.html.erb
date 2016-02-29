@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Academics</h1>
+<legend>Listing Academics</legend>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,7 +16,7 @@
 
   <tbody>
     <% @academics.each do |academic| %>
-      <tr>
+      <tr class="info">
         <td><%= academic.name %></td>
         <td><%= academic.location %></td>
         <td><%= academic.start_date %></td>

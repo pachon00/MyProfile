@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Trainings</h1>
+<legend>Listing Trainings</legend>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,7 +16,7 @@
 
   <tbody>
     <% @trainings.each do |training| %>
-      <tr>
+      <tr class="info">
         <td><%= training.name %></td>
         <td><%= training.porcent %></td>
         <td><%= training.start_date %></td>

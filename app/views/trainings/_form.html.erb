@@ -10,28 +10,41 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :porcent %><br>
-    <%= f.number_field :porcent %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br>
-    <%= f.text_field :level %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class='sub-container'>
+  <div class='well bs-component'>
+    <div class="form-group">
+      <%= f.label :name, class: 'col-lg-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :porcent, class: 'col-lg-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.number_field :porcent %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :start_date, class: 'col-lg-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.date_select :start_date %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :end_date, class: 'col-lg-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.date_select :end_date %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :level, class: 'col-lg-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :level %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.submit %>
+    </div>
+</div>
 <% end %>
+</div>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Works</h1>
+<legend>Listing Works</legend>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Company</th>
@@ -16,7 +16,7 @@
 
   <tbody>
     <% @works.each do |work| %>
-      <tr>
+      <tr class="info">
         <td><%= work.company %></td>
         <td><%= work.roles %></td>
         <td><%= work.start_date %></td>
