@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :resourses
-  resources :academics
-  resources :trainings
-  resources :languages
-  resources :works
-  resources :profiles
+  
+  resources :profiles do
+    resources :works#, only: [:create, :destroy, :update, :show]
+    resources :languages
+    resources :academics
+    resources :trainings
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -10,6 +10,10 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @work = Work.new
+    @language = Language.new
+    @academic = Academic.new
+    @training = Training.new 
   end
 
   # GET /profiles/new
@@ -69,6 +73,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :summary, :phone, :cell_phone, :email, :city, :estate, :birthday, :avatar)
+      params.require(:profile).permit(:first_name, :last_name, :summary, :phone, :cell_phone, :email, :city, :estate, :birthday, :avatar, :company)
     end
 end

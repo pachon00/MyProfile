@@ -49,5 +49,21 @@
   <%= @profile.birthday %>
 </p>
 
+<p>
+  <h3>Works:</h3>
+  <%= render "works/form" %>
+</p>
+<p>
+  <h3>Languages:</h3>
+  <%= render "languages/form"%>
+</p>
+<p>
+  <h3>Academics:</h3>
+  <%= render "academics/form"%>
+</p>
+<p>
+  <h3>Trainings:</h3>
+  <%= render "trainings/form"%>
+</p>
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
