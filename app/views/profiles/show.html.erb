@@ -8,62 +8,87 @@
   <strong>First name:</strong>
   <%= @profile.first_name %>
 </p>
-
 <p>
   <strong>Last name:</strong>
   <%= @profile.last_name %>
 </p>
-
 <p>
   <strong>Summary:</strong>
   <%= @profile.summary %>
 </p>
-
 <p>
   <strong>Phone:</strong>
   <%= @profile.phone %>
 </p>
-
 <p>
   <strong>Cell phone:</strong>
   <%= @profile.cell_phone %>
 </p>
-
 <p>
   <strong>Email:</strong>
   <%= @profile.email %>
 </p>
-
 <p>
   <strong>City:</strong>
   <%= @profile.city %>
 </p>
-
 <p>
   <strong>Estate:</strong>
   <%= @profile.estate %>
 </p>
-
 <p>
   <strong>Birthday:</strong>
   <%= @profile.birthday %>
 </p>
 
-<p>
-  <h3>Works:</h3>
-  <%= render "works/form" %>
-</p>
-<p>
-  <h3>Languages:</h3>
-  <%= render "languages/form"%>
-</p>
-<p>
-  <h3>Academics:</h3>
-  <%= render "academics/form"%>
-</p>
-<p>
-  <h3>Trainings:</h3>
-  <%= render "trainings/form"%>
-</p>
+<h2>Works</h2>
+<% if @profile.works.any? %>
+  <ul>
+    <% @profile.works.each do |work| %>
+    <li><%= link_to work, work %>- <%= work.roles %> - <%= work.start_date %> - <%= work.end_date %> 
+      <p><%= work.tasks %></p>
+    </li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>not works register</p>
+<% end %>
+
+<h2>Trainings</h2>
+<% if @profile.trainings.any? %>
+  <ul>
+    <% @profile.trainings.each do |training| %>
+    <li><%= link_to training, training %>- <%= training.porcent %> - <%= training.level%> - <%= training.start_date %> - <%= training.end_date %> 
+    </li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>not trainings register</p>
+<% end %>
+
+<h2>Academics</h2>
+<% if @profile.academics.any? %>
+  <ul>
+    <% @profile.academics.each do |academic| %>
+    <li><%= link_to academic, academic %> <%= academic.name %> - <%= academic.location %> <%= academic.grade %> - <%= academic.start_date %> - <%= academic.end_date %>
+     </li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>not academics register</p>
+<% end %>
+
+<h2>Languages</h2>
+<% if @profile.languages.any? %>
+  <ul>
+    <% @profile.languages.each do |language| %>
+    <li><%= link_to language, language %> <%= language.name %> - <%= language.porcent %> 
+     </li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>not academics register</p>
+<% end %>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
